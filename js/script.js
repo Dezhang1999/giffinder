@@ -25,5 +25,23 @@ $(document).ready(function(){
       // use $.ajax to call the giphy api with the given search term from the parameters.
       // get the first image url from the ajax response
       // use appendImageToGallery to put the image onto the screen
-  }
-});
+  $.ajax({
+      url: "https://api.giphy.com/v1/stickers/search?q=dog&api_key=dc6zaTOxFJmzC",
+      method: "GET",
+      success: function(response) {
+           // Log the whole response to the console
+    console.log(response);
+           // Log the first image of the data to the console
+    console.log(response.data[0].url
+    );
+           // Log the "type" property of the first image object to the console
+    console.log(response.data[0].type
+    );
+           // Log the "title" property of the first image object to the console
+    console.log(response.data[0].title
+    );
+      },
+    }); 
+}
+
+
